@@ -1,0 +1,117 @@
+<div class="w-full flex ">
+    <div class="w-[28%]">
+        <div class="rounded-l-lg bg-white border border-gray-300 flex flex-col pb-[380px]">
+            <div class="px-2 py-3 flex justify-between">
+                <span>Messaging </span>
+                <div class="flex pr-2 text-lg">
+                    <mat-icon class="mat-18">more_horiz</mat-icon>
+                    <i class="icofont-pencil-alt-2 mr-2 ml-5 "></i>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="my-2 ml-2">
+                <i class="icofont-search-1"></i> <input class="h-[30px] ml-2 bg-[#eef3f8] w-[260px] rounded"  matInput type="search" placeholder="  Search">
+            </div>
+            <div class="flex my-1  mx-3" *ngFor="let m of msg">
+                <img class="w-16 h-16 mt-2 border border-white rounded-full p-0.5 bg-white" [src]="m.img">
+             <div class="flex flex-col mx-3">
+                <span class="text-base text-blue-700 mt-2 ">{{m['name']}}</span>
+                <span class="text-xs ">{{m['company']}}</span>
+                <span class="text-xs mt-1 text-[#717171]">Bengaluru, Karnataka, India</span>
+                <span class="text-xs text-[#717171] mt-3">{{m['time']}} ago</span>
+                <mat-divider></mat-divider>
+
+             </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-[42%] ">
+        <div class="flex flex-col rounded-r-lg bg-white border border-gray-300">
+            <div class="flex justify-between">
+                <div class="px-2 pt-3 flex flex-col">
+                    <span>Sibaji Patnaik</span>
+                    <span class="text-xs text-[#b4b4b4]">Leadership hiring- Appian architect</span>
+                </div>
+                <div class="text-lg self-center flex mr-2">
+                    <mat-icon >more_horiz</mat-icon>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="flex justify-start">
+                <img class=" border border-white rounded-full w-20 h-20 p-0.5 bg-white"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd4RwbwLMKupTfn2mhwyOUkjD0clloiwTKBQ&usqp=CAU"
+                  alt="">
+                  <span class="mt-7 text-base">Sibaji Patnaik</span><span class="text-xs text-gray-500 mt-8 mx-2"> - 2:27 PM</span>
+            </div>
+                <div class="mx-20 flex flex-col space-y-7">
+                <span>Job opportunity with Harman --- ASP.NET & C# - F2F_Feb_01(saturday)</span>
+                <span>Hi Jothi,</span>
+                <span>I came across your profile on Linkedin and noticed that yttou have the kind of with ASP.NET DEVELOPERS & experiences that are really appreciated here at HARMAN .Our team is fast-growing & my role is to engage with top talents in the industry who love what they do, are good at it and are keen to be part of Company's transformational journey HARMAN</span>
+                <span>Skills: ASP.NET Developers/.NET Developers </span>
+                <span>Yrs : 3- 5yrs</span>
+                <span>Interview Location: Bangalore(Manyata)
+                    Job location: Hyderabad</span>
+                <span>If you have some time this week, I'd like to hear about your current career goals and have a preliminary discussion about future opportunities. Simply drop me your updated CV to sibaji.patnaik2@harman.com with your contact and also a good time for us to speak with below details</span>
+                <span>Thank you & Best regards,</span>
+                <div class="flex flex-col">
+                    <span>Name:</span>
+                    <span>Mobile number:</span>
+                    <span>Email id:</span>
+                    <span>Total yrs:</span>
+                    <span>Notice period:</span>
+                </div>
+                <span>Sibaji Patnaik,
+                    Talent Acquistion Specialist
+                    Harman Connected Services</span>
+            </div>
+            </div>
+    </div>
+
+    <div class="w-[26%] ml-8">
+        <div class=" bg-white mt-1.5 flex flex-col">
+            <div class="flex justify-end pt-2 pr-5">
+              <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>
+            </div>
+            <div class="text-xs text-[#717171] text-center pt-2">
+              <span>Get the latest on jobs, news, and more</span>
+            </div>
+            <div class="flex justify-center ">
+              <img class=" rounded-full w-20 h-20 m-4 bg-white"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU"
+              alt="">
+              <img class="w-16 h-16 m-2 mt-6" src="https://media-exp1.licdn.com/dms/image/C4D0BAQG6mLLezAvLKQ/company-logo_100_100/0/1632890379926?e=1677715200&v=beta&t=wxjqgaWujrg41DVr6K4N52tKHPNU-0Pmvwqn0WHBHOg" alt="">
+            </div>
+            <div class="text-center">
+             <span class="text-[#717171]">Jothi, you might like to follow Bit (bit.dev)</span> 
+            </div>
+            <div class="flex justify-center"> 
+              <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">Follow</div>
+            </div>
+          </div>
+          <div class="pt-5">
+            <div class="flex flex-col ">
+              <div class="flex justify-center gap-3">
+                <span class="text-[#717171] text-xs">About</span>
+                <span class="text-[#717171] text-xs">Accessibility</span>
+                <span class="text-[#717171] text-xs">Help Center</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-2">
+               <span class="text-[#717171] text-xs">Privacy & Terms </span>
+               <span class="text-[#717171] text-xs">Ad Choices</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-2">
+                <span class="text-[#717171] text-xs">Advertising</span>
+                <span class="text-[#717171] text-xs">Business Services</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-2">
+                <span class="text-[#717171] text-xs">Get the LinkedIn app</span>
+                <span class="text-[#717171] text-xs">More</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-4">
+                <span class="text-xs"> LinkedIn Corporation © 2022</span>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

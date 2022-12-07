@@ -1,0 +1,75 @@
+<div class="w-full flex">
+    <div class="w-[20%]">
+        <div class="rounded-lg bg-white border border-gray-300 flex flex-col p-5">
+            <span class="text-base">Manage your Notification</span>
+            <span class="text-blue-600 mt-2">View Settings</span>
+
+        </div>    
+    </div>
+
+    <!-- Middle Content -->
+    <div class="w-[50%] ml-8">
+        <div class="rounded-lg bg-white bg-blue-100 border border-gray-300">
+
+        <div class="flex my-1 mx-3" *ngFor="let m of notify">
+            <img class="w-16 h-16 mt-2 border border-white bg-white" [src]="m.img">
+         <div class="flex flex-col mx-3">
+            <span class="text-base text-blue-700 mt-2 ">{{m['name']}}</span>
+            <span class="text-xs ">{{m['company']}}</span>
+            <span class="text-xs mt-1 text-[#717171]">Bengaluru, Karnataka, India</span>
+            <span class="text-xs text-[#717171] mt-3">{{m['time']}} ago</span>
+            <mat-divider></mat-divider>
+
+         </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="w-[26%] ml-8">
+        <div class="border border-gray-300 rounded-lg bg-white  flex flex-col">
+            <div class="flex justify-end pt-2 pr-5">
+              <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>
+            </div>
+            <div class="text-xs text-[#717171] text-center pt-2">
+              <span>Get the latest on jobs, news, and more</span>
+            </div>
+            <div class="flex justify-center ">
+              <img class=" rounded-full w-20 h-20 m-4 bg-white"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU"
+              alt="">
+              <img class="w-16 h-16 m-2 mt-6" src="https://media-exp1.licdn.com/dms/image/C4D0BAQG6mLLezAvLKQ/company-logo_100_100/0/1632890379926?e=1677715200&v=beta&t=wxjqgaWujrg41DVr6K4N52tKHPNU-0Pmvwqn0WHBHOg" alt="">
+            </div>
+            <div class="text-center">
+             <span class="text-[#717171]">Jothi, you might like to follow Bit (bit.dev)</span> 
+            </div>
+            <div class="flex justify-center"> 
+              <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">Follow</div>
+            </div>
+          </div>
+          <div class="pt-5">
+            <div class="flex flex-col ">
+              <div class="flex justify-center gap-3">
+                <span class="text-[#717171] text-xs">About</span>
+                <span class="text-[#717171] text-xs">Accessibility</span>
+                <span class="text-[#717171] text-xs">Help Center</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-2">
+               <span class="text-[#717171] text-xs">Privacy & Terms </span>
+               <span class="text-[#717171] text-xs">Ad Choices</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-2">
+                <span class="text-[#717171] text-xs">Advertising</span>
+                <span class="text-[#717171] text-xs">Business Services</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-2">
+                <span class="text-[#717171] text-xs">Get the LinkedIn app</span>
+                <span class="text-[#717171] text-xs">More</span>
+              </div>
+              <div class="flex justify-center gap-3 mt-4">
+                <span class="text-xs"> LinkedIn Corporation © 2022</span>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="flex m-4 justify-between">
+  <span class="text-lg font-medium">Create a post</span>
+  <span class="text-lg font-medium cursor-pointer" (click)="onClose()">x</span>
+</div>
+<mat-divider></mat-divider>
+<div class="flex flex-col">
+  <div class="flex">
+    <img class=" border border-white rounded-full w-14 h-14 mt-3 ml-3 bg-white"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU" alt="">
+
+    <div class="flex flex-col px-2 pt-2">
+      <span class="text-base font-medium pt-2">John</span>
+      <div class="flex justify-center cursor-pointer">
+        <div class="text-gray-500 tracking-wide border border-gray-700 rounded-full px-2 py-1 text-xs">
+          <i class="icofont-world m-1 cursor-pointer"></i> Anyone <i class="icofont-rounded-down"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <form [formGroup]="postForm">
+  <div class="flex flex-col mx-5 mt-5">
+    <mat-form-field>
+      <mat-label>Enter company Name</mat-label>
+      <input matInput placeholder="Ex. ABC-Corporation" formControlName="compname">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Employee count</mat-label>
+      <input matInput placeholder="Ex. 2k" formControlName="count">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Location </mat-label>
+      <input matInput placeholder="Ex. Chennai" formControlName="location">
+    </mat-form-field>
+    <!-- <input type="text" style="outline: none;" placeholder="What do you want to tell??"> -->
+  </div>
+  <div class="flex justify-between mt-7">
+    <div>
+      <i class="icofont-slightly-smile text-gray-500 mx-5 text-xl"></i>
+      <mat-label class="text-blue-500 inline-block align-bottom">Hash tag</mat-label>
+    </div>
+      <div class="mb-2 ">
+        <div class="text-white tracking-wide border border-blue-500 rounded-full px-4 py-1 mr-5 font-medium cursor-pointer bg-blue-500 " (click)="onConfirmClick()">Post</div>
+      </div>
+    </div>
+  </form>
+
+
+
+</div>
