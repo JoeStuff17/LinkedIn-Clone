@@ -1,4 +1,4 @@
-<div class="w-full flex gap-5">
+<div class="w-full flex gap-5 h-full" *ngFor="let p of profileData">
     <!-- Left Content -->
     <div class="w-[30%] ">
         <div class="rounded-lg bg-white border border-gray-300">
@@ -82,14 +82,14 @@
             </div>
             <div class="flex justify-center ">
                 <img class=" rounded-full w-20 h-20 m-4 bg-white"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU"
+                   [src]="p['profileImage']"
                     alt="">
                 <img class="w-16 h-16 m-2 mt-6"
                     src="https://media-exp1.licdn.com/dms/image/C4D0BAQG6mLLezAvLKQ/company-logo_100_100/0/1632890379926?e=1677715200&v=beta&t=wxjqgaWujrg41DVr6K4N52tKHPNU-0Pmvwqn0WHBHOg"
                     alt="">
             </div>
             <div class="text-center">
-                <span class="text-[#717171]">Jothi, you might like to follow Bit (bit.dev)</span>
+                <span class="text-[#717171]">{{p['name']}}, you might like to follow Bit (bit.dev)</span>
             </div>
             <div class="flex justify-center m-3">
                 <div
@@ -128,7 +128,7 @@
         </div>
     </div>
     <!-- Right Content -->
-    <div class="w-[70%]">
+    <div class="w-[70%] overflow-y-scroll example">
         <div class="rounded-lg bg-white border border-gray-300">
             <div class="py-3 px-4">
                 <div class="flex justify-between">

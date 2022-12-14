@@ -1,3 +1,4 @@
+import { ApiService } from 'src/apiservice';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./messaging.component.scss']
 })
 export class MessagingComponent {
+  profileData: any;
+
+  constructor(public api:ApiService){}
+
+  ngOnInit():void{
+    this.getProfile();
+  }
+
+  getProfile() {
+    this.api.getProfileDetails().subscribe((res) => {
+      this.profileData = res;
+      console.log(res);
+      
+    });
+  }
 
   msg =[
     {

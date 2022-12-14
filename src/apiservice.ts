@@ -26,5 +26,26 @@ export class ApiService {
       })
     )
   }
+
+  addProfile(payload: any): Observable<any> {
+    return this.http.post(this.url + '/userprofile', payload).pipe(
+      tap(()=>{
+        this.Refresh.next();
+      })
+    )
+  }
+  
+  getProfileDetails(): Observable<any> {
+    return this.http.get(this.url + '/userprofile');
+  }
+
+  updateProfile(payload: any){
+    console.log(payload);
+    return this.http.put(this.url + '/userprofile/4', payload).pipe(
+      tap(()=>{
+        this.Refresh.next();
+      })
+    );
+  }
 }
 

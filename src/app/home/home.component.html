@@ -1,22 +1,23 @@
 
-<div class="w-full flex gap-5">
+<div class="w-full flex h-full gap-5" >
 
   <!-- Left content -->
-  <div class="w-[20%] ">
+  <div class="w-[20%]" *ngFor="let p of profileData">
     <div class="flex flex-col space-y-1.5 w-[230px]">
       <div class="rounded-lg bg-white border border-gray-300">
         <div class=" flex flex-col justify-center">
-          <div class="bg-image h-16 rounded-t-lg">
+          <div class="h-16 rounded-t-lg" >
+            <img class="rounded-t-lg h-16 w-[100%]"  [src]="p['bgImage']" alt="">
           </div>
           <div class="flex justify-center -mt-[40px] ">
             <img class=" border border-white rounded-full w-20 h-20 p-0.5 bg-white"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU"
+            [src]="p['profileImage']"
               alt="">
           </div>
           <div>
             <div class="flex flex-col justify-center items-center">
-              <span class="flex  text-xl">John</span>
-              <h5 class="text-[#717171] justify-center items-center">Software Engineer @ ReadyAssist</h5>
+              <span class="flex  text-xl">{{p['name']}}</span>
+              <h5 class="text-[#717171] justify-center items-center">{{p['organization']}}</h5>
             </div>
             <mat-divider></mat-divider>
             <div class="py-4 p-4">
@@ -40,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="rounded-lg bg-white  flex flex-col border border-gray-300">
+      <div class="rounded-lg bg-white flex flex-col border border-gray-300">
         <div class="flex justify-between items-center">
           <span class="text-xs text-[#717171] p-3">Followed Hashtags</span>
           <button mat-icon-button>
@@ -63,11 +64,11 @@
   </div>
 
   <!-- Middle content -->
-  <div class="w-[48%] ">
-    <div class="rounded-lg bg-white  flex flex-col border border-gray-300 ">
+  <div class="w-[48%] overflow-y-scroll scroll" >
+    <div class="rounded-lg bg-white  flex flex-col border border-gray-300 "*ngFor="let p of profileData">
       <div class="flex ">
         <img class=" border border-white rounded-full w-14 h-14 my-3 ml-3 bg-white"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU"
+        [src]="p['profileImage']"
           alt="">
         <div class=" border border-gray-400 w-full rounded-full text-[#717171] mt-2 ml-2 flex self-center p-3 mr-4 cursor-pointer "
           (click)="openPost()">
@@ -88,7 +89,7 @@
           <span class="text-[12px] text-[#717171] ">Sort by: Top</span>
       </div>
     </div>
-    <div class="rounded-lg bg-white  flex flex-col border border-gray-300 mb-1" *ngFor="let c of companyData.reverse()">
+    <div class="rounded-lg bg-white  flex flex-col border border-gray-300 mb-1" *ngFor="let c of companyData">
       <div class="flex p-3 justify-between">
         <div class="flex">
           <img class="w-12 h-12"
@@ -134,7 +135,7 @@
   </div>
 
   <!-- Right content -->
-  <div class="w-[30%]">
+  <div class="w-[30%]" *ngFor="let p of profileData">
     <div class="rounded-lg bg-white flex flex-col border border-gray-300 ">
       <div class="flex justify-between px-2 pt-3">
         <span class="text-base">LinkedIn News</span>
@@ -180,7 +181,7 @@
           class="icofont-rounded-down text-base inline-block align-middle"></i> </span></button>
       </div>
     </div>
-    <div class="rounded-lg bg-white mt-1.5 flex flex-col border border-gray-300 ">
+    <div class="rounded-lg bg-white mt-1.5 flex flex-col border border-gray-300 overflow-hidden ">
       <div class="flex justify-end pt-2 pr-5">
         <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>
       </div>
@@ -189,12 +190,12 @@
       </div>
       <div class="flex justify-center ">
         <img class=" rounded-full w-20 h-20 m-4 bg-white"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU"
+        [src]="p['profileImage']"
         alt="">
         <img class="w-16 h-16 m-2 mt-6" src="https://media-exp1.licdn.com/dms/image/C4D0BAQG6mLLezAvLKQ/company-logo_100_100/0/1632890379926?e=1677715200&v=beta&t=wxjqgaWujrg41DVr6K4N52tKHPNU-0Pmvwqn0WHBHOg" alt="">
       </div>
       <div class="text-center">
-       <span class="text-[#717171]">Jothi, you might like to follow Bit (bit.dev)</span> 
+       <span class="text-[#717171]">{{p['name']}}, you might like to follow Bit (bit.dev)</span> 
       </div>
       <div class="flex justify-center"> 
         <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">Follow</div>

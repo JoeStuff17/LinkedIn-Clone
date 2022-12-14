@@ -1,0 +1,168 @@
+<div class="w-full flex gap-5" *ngFor="let p of profileData">
+    <div class="w-[70%]">
+        <div class="flex flex-col space-y-1.5">
+            <div class="rounded-lg bg-white border border-gray-300">
+                <div class="flex flex-col justify-center">
+                    <div class=" h-[180px]">
+                        <img class="h-[180px] w-[100%] rounded-t-lg"  [src]="p['bgImage']" alt="">
+                    </div>
+                    <div class="flex ml-5 -mt-[100px] justify-between ">
+                        <img class=" border border-white rounded-full w-[150px] h-[153px] p-0.5 bg-white cursor-pointer " [src]="p['profileImage'] " >
+                        
+                        <div class="flex mt-[120px] mr-5 cursor-pointer " (click)="openPost()">
+                            <i class="icofont-edit self-center text-gray-500 text-2xl"></i>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class="flex flex-col ml-5 mt-5 mb-5" >
+                            <span class="flex font-medium text-2xl">{{p['name']}}</span>
+                            <span class="pb-1 justify-center items-center text-md">{{p['organization']}}</span>
+                            <div class="flex">
+                                <span class="py-1 justify-center items-center text-gray-500 text-md">{{p['location']}}</span>
+                                <span
+                                    class="ml-2 py-1 text-underline text-md font-medium text-[#0a66c2] cursor-pointer">Contact
+                                    info</span>
+                            </div>
+                            <span class=" py-1 text-underline text-xs font-medium text-[#0a66c2] cursor-pointer">10
+                                Connections</span>
+                               
+                            <div class="flex">
+                                <div class="mt-2 mr-2">
+                                    <div
+                                        class="text-white tracking-wide border border-blue-500 rounded-full px-4 py-1.5 font-medium cursor-pointer bg-blue-500">
+                                        Open to</div>
+                                </div>
+                                <div class="flex justify-center mr-2">
+                                    <div
+                                        class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">
+                                        Add Profile Secction</div>
+                                </div>
+                                <div class="flex justify-center mr-2">
+                                    <div
+                                        class="text-gray-500 tracking-wide border border-gray-500 rounded-full px-4 py-1.5 my-2 font-medium">
+                                        More</div>
+                                </div>
+                            </div>
+                            <div class="flex gap-3.5 mt-4">
+                                <div class="flex flex-col w-[350px] rounded-lg bg-white border border-gray-300">
+                                    <div class="m-3 flex flex-col">
+                                        <div class="flex justify-between">
+                                            <span class="text-xs font-medium">Open to work</span>
+                                            <div class="flex cursor-pointer">
+                                                <i class="icofont-pencil-alt-1 self-center text-gray-500 text-lg"></i>
+                                            </div>
+                                        </div>
+                                        <span>Java Software Engineer, Software Engineer..</span>
+                                        <span class="font-medium text-[#0a66c2] cursor-pointer">See all details</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col w-[350px] rounded-lg bg-white border border-gray-300">
+                                    <div class="m-3 flex flex-col">
+                                        <div class="flex justify-between">
+                                            <span class="text-xs font-medium">Share that you're hiring and attract qualified</span>
+                                            <div class="flex cursor-pointer">
+                                                <i class="icofont-close self-center text-gray-500 text-lg"></i>
+                                            </div>
+                                        </div>
+                                        <span>candidates.</span>
+                                        <span class="font-medium text-[#0a66c2] cursor-pointer">Get started</span>
+                                    </div>
+                                </div>
+                             </div>
+                             
+                        </div>
+                        <mat-divider></mat-divider>
+
+                        <div class="m-5 flex justify-between">
+                            <span class="text-xl">Interest</span>
+                            <div class="flex cursor-pointer">
+                                <i class="icofont-pencil-alt-1 self-center text-gray-500 text-lg"></i>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+
+                        <div class="m-5 flex justify-between">
+                            <span class="text-xl">Qualification</span>
+                            <div class="flex cursor-pointer">
+                                <i class="icofont-pencil-alt-1 self-center text-gray-500 text-lg"></i>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+
+                        <div class="m-5 flex justify-between">
+                            <span class="text-xl">Skills</span>
+                            <div class="flex cursor-pointer">
+                                <i class="icofont-pencil-alt-1 self-center text-gray-500 text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-lg bg-white  flex flex-col border border-gray-300">
+                <div class="flex justify-between items-center">
+                    <span class="text-xl text-[#717171] p-3">Take a skill quiz</span>
+                    <div class="flex cursor-pointer px-3 pt-3">
+                        <i class="icofont-close self-center text-gray-500 text-2xl"></i>
+                    </div>
+                </div>
+                <div class="mx-3 mb-3">
+                <i class="icofont-eye text-xl text-gray-500"></i>
+                <span class="text-md ml-1 text-gray-500">Private to you</span>
+                </div>
+                <div class="flex justify-center my-3">
+                    <div class="flex flex-col w-[650px] rounded-lg bg-white border border-gray-300">
+                        <div class="m-3 flex flex-col">
+                            <div class="flex justify-between">
+                                <span class="text-xs font-medium">Open to work</span>
+                                <div class="flex cursor-pointer">
+                                    <i class="icofont-pencil-alt-1 self-center text-gray-500 text-lg"></i>
+                                </div>
+                            </div>
+                            <span>Java Software Engineer, Software Engineer..</span>
+                            <span class="font-medium text-[#0a66c2] cursor-pointer">See all details</span>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <!-- Right Content -->
+    <div class="w-[30%] ">
+        <div class=" flex flex-col rounded-lg bg-white border border-gray-300">
+            <div class="m-4">
+                <div class="mb-3 flex justify-between">
+                    <span class="text-base font-medium text-gray-500">Edit public profile & URL</span>
+                    <i class="icofont-question-circle self-center text-gray-500 text-lg"></i>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="mt-3 flex justify-between">
+                    <span class="text-base font-medium text-gray-500">Add profile in another language</span>
+                    <i class="icofont-question-circle self-center text-gray-500 text-lg"></i>
+                </div>
+            </div>
+        </div>
+        <div class="rounded-lg bg-white mt-1.5 flex flex-col border border-gray-300 ">
+            <div class="flex justify-end pt-2 pr-5">
+              <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>
+            </div>
+            <div class="text-xs text-[#717171] text-center pt-2">
+              <span>Get the latest on jobs, news, and more</span>
+            </div>
+            <div class="flex justify-center ">
+              <img class=" rounded-full w-20 h-20 m-4 bg-white"
+              [src]="p['profileImage']">
+              <img class="w-16 h-16 m-2 mt-6" src="https://media-exp1.licdn.com/dms/image/C4D0BAQG6mLLezAvLKQ/company-logo_100_100/0/1632890379926?e=1677715200&v=beta&t=wxjqgaWujrg41DVr6K4N52tKHPNU-0Pmvwqn0WHBHOg" alt="">
+            </div>
+            <div class="text-center">
+             <span class="text-[#717171]">{{p['name']}}, you might like to follow Bit (bit.dev)</span> 
+            </div>
+            <div class="flex justify-center"> 
+              <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">Follow</div>
+            </div>
+          </div>
+
+
+    </div>
+</div>

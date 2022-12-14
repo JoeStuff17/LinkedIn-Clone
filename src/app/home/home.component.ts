@@ -1,7 +1,8 @@
 import { ApiService } from 'src/apiservice';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-home',
@@ -9,30 +10,40 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
+  @ViewChild('sidenav')
+  public sidenav!: MatSidenav;
+
   //variables
   companyData: any;
+  profileData: any;
 
   ngOnInit(): void {
     this.getDetails();
-    this.api.Refresh.subscribe(response=>{
+    this.getProfile();
+    this.api.Refresh.subscribe(response => {
       this.getDetails();
+      
     })
   }
+
+  getProfile() {
+    this.api.getProfileDetails().subscribe((res) => {
+      this.profileData = res;
+      // console.log(res);
+    });
+  }
+
   showFiller = false;
-  panelOpenState = false;
-
   constructor(public dialog: MatDialog,
-    public api: ApiService) { }
-
+    public api: ApiService) {}
 
   openPost(): void {
     this.dialog.open(UserdialogComponent, {
       disableClose: false,
       width: '550px',
       height: '450px',
-      position: {top: '4%'}
-    }); 
+      position: { top: '4%' }
+    });
   }
   getDetails() {
     this.api.getCompanyDetails().subscribe((res) => {
@@ -41,6 +52,7 @@ export class HomeComponent implements OnInit {
   }
 }
 
+// Dialogpage-Component
 
 @Component({
   selector: 'app-home',
@@ -55,16 +67,16 @@ export class UserdialogComponent implements OnInit {
     count: [''],
     location: ['']
   });
-  
+
 
   constructor(
     public dialogRef: MatDialogRef<UserdialogComponent>,
     public api: ApiService,
-    private readonly fb: FormBuilder,    
+    private readonly fb: FormBuilder,
   ) { }
 
   onConfirmClick() {
-    
+
     this.dialogRef.close();
     const payload = {
       name: this.postForm.get('compname')?.value,
@@ -77,12 +89,13 @@ export class UserdialogComponent implements OnInit {
 
   }
 
-  onClose(){
+  onClose() {
     this.dialogRef.close();
   }
 
   ngOnInit(): void {
   }
-
-
 }
+
+// Side-Nav-Component
+

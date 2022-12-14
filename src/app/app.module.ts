@@ -14,12 +14,14 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import { ApiService } from 'src/apiservice';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,   
+    HeaderComponent,
+       
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatMenuModule,
     MatDividerModule,
     ReactiveFormsModule,
-    HttpClientModule  ],
+    HttpClientModule,
+    MatSidenavModule
+     ],
   providers: [ApiService],
   bootstrap: [AppComponent]
 })

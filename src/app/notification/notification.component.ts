@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from 'src/apiservice';
 
 @Component({
   selector: 'app-notification',
@@ -6,6 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent {
+  profileData: any;
+
+  constructor(public api:ApiService){}
+
+  ngOnInit(){
+    this.getProfile();
+  }
+
+  getProfile(){
+    this.api.getProfileDetails().subscribe((ref)=>{
+      this.profileData = ref;
+      console.log(ref);
+    });
+  }
 
   notify =[
     {

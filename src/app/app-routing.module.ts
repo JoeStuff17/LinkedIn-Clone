@@ -26,6 +26,14 @@ const routes: Routes = [
   {    
     path:'notification',
     loadChildren: () => import('./notification/notification.module').then(m => m.NotificationModule)
+  },
+  {    
+    path:'profile',
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
+  },
+  {    
+    path:'map',
+    loadChildren: () => import('./map/map.module').then(m => m.MapModule)
   }
 ];
 

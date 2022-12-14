@@ -1,14 +1,36 @@
-.bg-image{
-    background-image: url('https://img.freepik.com/free-vector/blue-technology-digital-banner-design_1017-32257.jpg?w=2000');
-    background-repeat: no-repeat;
-    background-size: cover;
+:host ::ng-deep {
+  .mat-card {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    border-radius: 4px;
+    padding: 0px;
+  }
 }
-:host ::ng-deep{
-    .mat-card {
-        transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-        display: block;
-        position: relative;
-        border-radius: 4px;
-        padding: 0px;
-    }
+
+.example-container {
+  width: full;
+  height: 300px;
+  align-content: flex-end;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

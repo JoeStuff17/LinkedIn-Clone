@@ -10,15 +10,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatSidenavModule, MatSidenavContent, MatSidenav } from '@angular/material/sidenav';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,UserdialogComponent
+    HomeComponent,UserdialogComponent,
   ],
   imports: [
     homeRouting,
@@ -34,8 +33,12 @@ import {MatCardModule} from '@angular/material/card';
     MatSidenavModule,
     MatDividerModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
   ],
+  exports: [
+    MatSidenav,
+    MatSidenavContent
+],
 
 })
 export class HomeModule { }

@@ -7,7 +7,12 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style":[
+            "src/styles.scss",
+            "node_modules/mapbox-gl/dist/mapbox-gl.css",
+              "src/assets/leaflet/leaflet.css",
+              "./node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css"
+          ]
         }
       },
       "root": "",

@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Input } from '@angular/core';
+import { ApiService } from 'src/apiservice';
 
 
 @Component({
@@ -9,15 +9,29 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialo
 })
 export class HeaderComponent {
 
-  
+  constructor(public api: ApiService,
+    ){}
+
+  profileData: any;
   value = 'Clear me';
   msg: any;
- 
+  showFiller = false;
  
   ngOnInit(){
+    this.getProfile();
+    this.api.Refresh.subscribe(response=>{
+      this.getProfile();
+    })
   }
-
-  
+  getProfile() {
+      
+    this.api.getProfileDetails().subscribe((res) => {
+      this.profileData = res;      
+    });
+  }
+  // clickMenu() { 
+  //   this.sideNavService.toggle();
+  // }
 }
 
 
