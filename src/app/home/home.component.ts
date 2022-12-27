@@ -2,7 +2,6 @@ import { ApiService } from 'src/apiservice';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +9,8 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('sidenav')
-  public sidenav!: MatSidenav;
+  // @ViewChild('sidenav')
+  // public sidenav!: MatSidenav;
 
   //variables
   companyData: any;
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.getProfile();
     this.api.Refresh.subscribe(response => {
       this.getDetails();
-      
+
     })
   }
 
@@ -35,7 +34,7 @@ export class HomeComponent implements OnInit {
 
   showFiller = false;
   constructor(public dialog: MatDialog,
-    public api: ApiService) {}
+    public api: ApiService) { }
 
   openPost(): void {
     this.dialog.open(UserdialogComponent, {
@@ -96,6 +95,3 @@ export class UserdialogComponent implements OnInit {
   ngOnInit(): void {
   }
 }
-
-// Side-Nav-Component
-

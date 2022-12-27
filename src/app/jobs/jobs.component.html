@@ -1,5 +1,7 @@
 <div class="w-full h-full flex gap-5">
-    <div class="w-[20%]">
+
+    <!-- left Content -->
+    <div class="hidden sm:block w-max md:block w-max lg:block w-max xl:w-max">
         <div class="rounded-lg bg-white border border-gray-300">
             <div class="flex flex-col py-5">
                 <div class="flex pb-2.5 px-4 cursor-pointer">
@@ -43,12 +45,15 @@
             </div>
         </div>
         <div class="flex justify-center ">
-            <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-10 py-2.5 my-3.5 font-medium"> <i class="icofont-pencil-alt-1 self-center text-[#0a66c2] text-2xl"></i> Post a free job</div>
+            <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full w-full py-3 h-12 my-3.5 font-medium"> 
+                <div class="flex justify-center">
+                    <i class="icofont-pencil-alt-1 text-[#0a66c2] text-2xl"></i> Post a free job</div>
+                </div>
         </div>
     </div>
 
-
-    <div class="w-[50%] overflow-y-scroll example">
+    <!-- Middle Content -->
+    <div class="w-max sm:w-[50%] xl:w-[50%] overflow-y-scroll example">
         <div class="rounded-lg bg-white border p-2 pb-4 border-gray-300">
             <div class="py-3 px-4">
                 <div class="flex justify-between">
@@ -111,7 +116,9 @@
             </div>
         </div>
     </div>
-    <div class="w-[30%]">
+
+    <!-- Right Content -->
+    <div class="hidden sm:hidden md:hidden lg:block w-[30%] xl:w-[30%]">
         <div class="rounded-lg bg-white border pt-2 border-gray-300">
             <div class="py-3 px-4">
                 <div class="flex flex-col">

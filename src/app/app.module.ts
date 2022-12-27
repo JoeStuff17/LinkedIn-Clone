@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -15,30 +15,31 @@ import {MatDividerModule} from '@angular/material/divider';
 import { ApiService } from 'src/apiservice';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-       
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatInputModule,
-    FormsModule,
-    MatDialogModule,
-    MatMenuModule,
-    MatDividerModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatSidenavModule
-     ],
-  providers: [ApiService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent
+    ],
+    providers: [ApiService],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatInputModule,
+        FormsModule,
+        MatDialogModule,
+        MatMenuModule,
+        MatDividerModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatSidenavModule,
+    ]
 })
 export class AppModule { }

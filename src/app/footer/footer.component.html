@@ -1,0 +1,28 @@
+  <div class="w-full fixed" *ngFor="let p of profileData">
+    <div class="flex justify-evenly bg-white pt-1 ">
+        <div class="flex flex-col text-[#717171]" role="button" routerLink="/home">
+          <i class="icofont-home self-center text-2xl"></i>
+          <small class="flex text-xs inline sm:hidden">Home</small>
+        </div>
+  
+        <div class="flex flex-col text-[#717171]" role="button" routerLink="/network">
+          <i class="icofont-group self-center text-2xl"></i>
+          <small class="flex text-xs inline sm:hidden">My Network</small>
+        </div>
+  
+        <div class="flex flex-col text-[#717171]" role="button" (click)="openPost()">
+          <i class="icofont-plus-square self-center text-xl"></i>
+          <small class="flex text-xs pt-1 inline sm:hidden">post</small>
+        </div>
+  
+        <div class="flex flex-col text-[#717171]" role="button" routerLink="/notification">
+          <i class="icofont-alarm self-center text-2xl"></i>
+          <small class="flex text-xs inline sm:hidden">Notification</small>
+        </div>
+
+        <div class="flex flex-col text-[#717171] px-1" role="button" routerLink="/jobs">
+          <i class="icofont-bag-alt self-center text-xl"></i>
+          <small class="flex text-xs pt-1 inline sm:hidden">Jobs</small>
+        </div>
+    </div>
+  </div>

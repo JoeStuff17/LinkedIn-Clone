@@ -1,5 +1,7 @@
 <div class="w-full h-full flex" *ngFor="let p of profileData">
-    <div class="w-[28%]">
+
+    <!-- left Content -->
+    <div class="w-full sm:w-full md:w-max lg:w-[28%] xl:w-[28%]">
         <div class="rounded-l-lg bg-white border border-gray-300 flex flex-col pb-[380px]">
             <div class="px-2 py-3 flex justify-between">
                 <span>Messaging </span>
@@ -26,7 +28,8 @@
         </div>
     </div>
 
-    <div class="w-[42%] overflow-y-scroll scroll">
+    <!-- Messaging Expand -->
+    <div class="hidden sm:hidden md:inline w-screen lg:w-[42%] xl:w-[42%] overflow-y-scroll scroll">
         <div class="flex flex-col rounded-r-lg bg-white border border-gray-300">
             <div class="flex justify-between">
                 <div class="px-2 pt-3 flex flex-col">
@@ -68,7 +71,8 @@
             </div>
     </div>
 
-    <div class="w-[26%] ml-8">
+    <!-- Right content -->
+    <div class="hidden sm:hidden md:hidden lg:block w-[30%] xl:block w-[30%] ml-8">
         <div class=" bg-white mt-1.5 flex flex-col">
             <div class="flex justify-end pt-2 pr-5">
               <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>

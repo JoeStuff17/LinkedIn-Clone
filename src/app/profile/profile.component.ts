@@ -14,8 +14,7 @@ export interface DialogData {
 })
 export class ProfileComponent implements OnInit {
   profileData: any;
-  p: any;
-
+  p: any; 
 
   constructor(public dialog: MatDialog,
     public api: ApiService) { }
