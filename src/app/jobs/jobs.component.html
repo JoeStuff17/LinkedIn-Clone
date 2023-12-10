@@ -1,51 +1,19 @@
-<div class="w-full h-full flex gap-5">
+<div class="w-full h-full flex justify-center gap-5">
 
     <!-- left Content -->
     <div class="hidden sm:block w-max md:block w-max lg:block w-max xl:w-max">
         <div class="rounded-lg bg-white border border-gray-300">
-            <div class="flex flex-col py-5">
-                <div class="flex pb-2.5 px-4 cursor-pointer">
-                    <i class="icofont-book-mark self-center text-[#666666] text-2xl"></i>
-                    <span class="ml-4 inline-block align-middle text-md text-[#666666]"> My jobs</span>
-                </div>
-                <div class="flex py-2.5 px-4 justify-between cursor-pointer">
-                    <div>
-                        <i class="icofont-alarm self-center text-[#717171] text-2xl"></i><span
-                            class="ml-3 text-md text-[#717171]"> Job alerts</span>
-                    </div>
-                </div>
-                <div class="flex py-2.5 px-4 justify-between cursor-pointer">
-                    <div>
-                        <i class="icofont-prescription self-center text-[#717171] text-2xl"></i><span
-                            class="ml-4 inline-block align-middle text-md text-[#717171]"> Skill Assessments</span>
-                    </div>
-                </div>
-                <div class="flex py-2.5 px-4 justify-between cursor-pointer">
-                    <div>
-                        <i class="icofont-paper self-center text-[#717171] text-2xl"></i><span
-                            class="ml-3 text-md text-[#717171]"> Interview prep</span>
-                    </div>
-                </div>
-                <div class="flex py-2.5 px-4 justify-between cursor-pointer">
-                    <div>
-                        <i class="icofont-paperclip self-center text-[#717171] text-2xl"></i><span
-                            class="ml-3 text-md text-[#717171]"> Resume Builder</span>
-                    </div>
-                </div>
-                <div class="flex py-2.5 px-4 cursor-pointer">
-                    <i class="icofont-youtube-play self-center text-[#717171] text-2xl"></i>
-                    <span class="ml-3 text-md text-[#717171]"> Job seeker guidance</span>
-                </div>
-                <div class="flex pt-2.5 px-4 justify-between cursor-pointer">
-                    <div>
-                        <i class="icofont-ui-settings self-center text-[#717171] text-2xl"></i><span
-                            class="ml-3 text-md text-[#717171]"> Application settings</span>
-                    </div>
-                </div>
+            <div class="flex flex-col py-2">
+              <div *ngFor="let lc of leftContent">
+                <div class="flex py-2.5 px-4 cursor-pointer" >
+                  <i class="{{lc['icon']}} self-center text-[#666666] text-2xl"></i>
+                  <span class="ml-4 inline-block align-middle text-md text-[#666666]"> {{[lc['name']]}}</span>
+              </div>
+              </div>
             </div>
         </div>
         <div class="flex justify-center ">
-            <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full w-full py-3 h-12 my-3.5 font-medium"> 
+            <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full w-full py-3 h-12 my-3.5 font-medium">
                 <div class="flex justify-center">
                     <i class="icofont-pencil-alt-1 text-[#0a66c2] text-2xl"></i> Post a free job</div>
                 </div>
@@ -53,7 +21,7 @@
     </div>
 
     <!-- Middle Content -->
-    <div class="w-max sm:w-[50%] xl:w-[50%] overflow-y-scroll example">
+    <div class="w-max sm:w-[40%] xl:w-[40%] overflow-y-scroll example">
         <div class="rounded-lg bg-white border p-2 pb-4 border-gray-300">
             <div class="py-3 px-4">
                 <div class="flex justify-between">
@@ -67,7 +35,7 @@
                          <i class="icofont-search-2 self-center text-[#0a66c2] mx-1.5 text-md"></i>{{i['sug']}}</div>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="rounded-lg bg-white border pt-2 mt-3 border-gray-300">
@@ -77,7 +45,7 @@
                     <span class="text-xs text-[#717171] cursor-pointer"> Based on your profile and search history</span>
                 </div>
                 <div class="flex mt-6">
-                    <img class="w-16 h-16 mt-2" src="https://media-exp1.licdn.com/dms/image/C560BAQFXrf-qiLykqA/company-logo_100_100/0/1657035212567?e=1677715200&v=beta&t=ShvE-QR2mf9Nf2vczjpWkOKT782sdiY2iNPt6RABCko" alt="">
+                    <img class="w-16 h-16 mt-2" src="https://media.licdn.com/dms/image/D4E0BAQGlt9bgVVACOQ/company-logo_100_100/0/1688457133693/mcafee_logo?e=1710374400&v=beta&t=EuOhVmKV0TpPa6JIEO9tuZY3iiP4mFNErKhq_AXMoq4" alt="">
                  <div class="flex flex-col mx-3">
                     <span class="text-base text-blue-700 mt-2 ">Android Developer - Remote</span>
                     <span class="text-xs ">McAfee</span>
@@ -99,7 +67,7 @@
                     <span class="text-xs text-[#717171] cursor-pointer"> India </span>
                 </div>
                 <div class="flex mt-1" *ngFor="let j of job">
-                    <img class="w-16 h-16 mt-2" [src]="j.img">
+                    <img class="w-16 h-16 mt-2" [src]="j['img']">
                  <div class="flex flex-col mx-3">
                     <span class="text-base text-blue-700 mt-2 ">{{j['title']}}</span>
                     <span class="text-xs ">{{j['company']}}</span>
@@ -118,7 +86,7 @@
     </div>
 
     <!-- Right Content -->
-    <div class="hidden sm:hidden md:hidden lg:block w-[30%] xl:w-[30%]">
+    <div class="hidden sm:hidden md:hidden lg:block w-[25%] xl:w-[25%]">
         <div class="rounded-lg bg-white border pt-2 border-gray-300">
             <div class="py-3 px-4">
                 <div class="flex flex-col">
@@ -136,7 +104,7 @@
             <div class="p-3 text-[#b58fe0] cursor-pointer">
                 <span class="text-md">Show more <i class="icofont-arrow-right inline-block align-bottom pl-2 text-xl"></i></span>
             </div>
-            
+
         </div>
         <div class="pt-5">
             <div class="flex flex-col ">
@@ -147,7 +115,7 @@
               </div>
               <div class="flex justify-center gap-3">
                  <div class="flex mt-2">
-                     <span class="text-[#717171] text-xs">Privacy & Terms </span> 
+                     <span class="text-[#717171] text-xs">Privacy & Terms </span>
                     <i class="icofont-rounded-down text-[#717171] text-lg "></i>
                  </div>
                     <span class="text-[#717171] text-xs mt-2">Ad Choices</span>
@@ -156,7 +124,7 @@
                 <span class="text-[#717171] text-xs mt-2">Advertising</span>
 
                 <div class="flex mt-2">
-                    <span class="text-[#717171] text-xs">Business Services</span> 
+                    <span class="text-[#717171] text-xs">Business Services</span>
                    <i class="icofont-rounded-down text-[#717171] text-lg "></i>
                 </div>
              </div>
@@ -170,5 +138,5 @@
             </div>
           </div>
     </div>
-    
+
 </div>

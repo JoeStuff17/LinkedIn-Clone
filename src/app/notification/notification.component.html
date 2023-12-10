@@ -1,16 +1,16 @@
-<div class="w-full h-full flex"  *ngFor="let p of profileData">
+<div class="w-full h-full flex justify-center">
 
     <!-- Left Content -->
-    <div class="hidden sm:hidden md:inline w-max lg:w-max xl:w-[20%] mr-8">
+    <div class="hidden sm:hidden md:inline w-max lg:w-max xl:w-[18%] mr-5">
         <div class="rounded-lg bg-white border border-gray-300 flex flex-col p-5">
             <span class="text-base">Manage your Notification</span>
             <span class="text-blue-600 mt-2">View Settings</span>
 
-        </div>    
+        </div>
     </div>
 
     <!-- Middle Content -->
-    <div class="w-full sm:w-full md:w-full lg:w-[50%] xl:w-[50%] overflow-y-scroll scroll">
+    <div class="w-full sm:w-full md:w-full lg:w-[40%] xl:w-[40%] overflow-y-scroll scroll">
         <div class="rounded-lg bg-white bg-blue-100 border border-gray-300">
 
         <div class="flex my-1 mx-3" *ngFor="let m of notify">
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Right Content -->
-    <div class="hidden sm:hidden md:hidden lg:block w-max xl:block w-[26%] ml-8">
+    <div class="hidden sm:hidden md:hidden lg:block w-max xl:block w-[22%] ml-5">
         <div class="border border-gray-300 rounded-lg bg-white  flex flex-col">
             <div class="flex justify-end pt-2 pr-5">
               <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>
@@ -38,14 +38,14 @@
             </div>
             <div class="flex justify-center ">
               <img class=" rounded-full w-20 h-20 m-4 bg-white"
-                [src]="p['profileImage']"
+                [src]="userProfile['profile']"
               alt="">
-              <img class="w-16 h-16 m-2 mt-6" src="https://media-exp1.licdn.com/dms/image/C4D0BAQG6mLLezAvLKQ/company-logo_100_100/0/1632890379926?e=1677715200&v=beta&t=wxjqgaWujrg41DVr6K4N52tKHPNU-0Pmvwqn0WHBHOg" alt="">
+              <img class="w-16 h-16 m-2 mt-6" [src]="userProfile['addImage']" alt="">
             </div>
             <div class="text-center">
-             <span class="text-[#717171]">{{p['name']}}, you might like to follow Bit (bit.dev)</span> 
+             <span class="text-[#717171] text-[12px]">{{userProfile['name']}}, you might like to follow Bit (bit.dev)</span>
             </div>
-            <div class="flex justify-center"> 
+            <div class="flex justify-center py-3">
               <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">Follow</div>
             </div>
           </div>

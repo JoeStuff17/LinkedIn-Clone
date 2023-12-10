@@ -1,5 +1,6 @@
 import { ApiService } from 'src/apiservice';
 import { Component } from '@angular/core';
+import { DataService } from 'src/data-service';
 
 @Component({
   selector: 'app-messaging',
@@ -7,21 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./messaging.component.scss']
 })
 export class MessagingComponent {
-  profileData: any;
+  userProfile: any;
 
-  constructor(public api:ApiService){}
+  constructor(public api:ApiService,
+    private dataService: DataService){}
 
-  ngOnInit():void{
-    this.getProfile();
-  }
-
-  getProfile() {
-    this.api.getProfileDetails().subscribe((res) => {
-      this.profileData = res;
-      console.log(res);
-      
+  ngOnInit(): void {
+    // this.getProfile();
+    this.dataService.users.subscribe((res: any) => {
+      this.userProfile = res[0];
     });
   }
+
+  // getProfile() {
+  //   this.api.getProfileDetails().subscribe((res) => {
+  //     this.profileData = res;
+  //     // console.log(res);
+  //   });
+  // }
 
   msg =[
     {
