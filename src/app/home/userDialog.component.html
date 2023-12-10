@@ -9,7 +9,7 @@
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwq-fBLVvNp3cKYRCJtgNx3oGfUuOVZwjIbw&usqp=CAU" alt="">
 
     <div class="flex flex-col px-2 pt-2">
-      <span class="text-base font-medium pt-2">John</span>
+      <span class="text-base font-medium pt-2">{{userProfile['name']}}</span>
       <div class="flex justify-center cursor-pointer">
         <div class="text-gray-500 tracking-wide border border-gray-700 rounded-full px-2 py-1 text-xs">
           <i class="icofont-world m-1 cursor-pointer"></i> Anyone <i class="icofont-rounded-down"></i>
@@ -18,22 +18,12 @@
     </div>
   </div>
 
-
   <form [formGroup]="postForm">
   <div class="flex flex-col mx-5 mt-5">
-    <mat-form-field>
-      <mat-label>Enter company Name</mat-label>
-      <input matInput placeholder="Ex. ABC-Corporation" formControlName="compname">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Employee count</mat-label>
-      <input matInput placeholder="Ex. 2k" formControlName="count">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Location </mat-label>
-      <input matInput placeholder="Ex. Chennai" formControlName="location">
-    </mat-form-field>
-    <!-- <input type="text" style="outline: none;" placeholder="What do you want to tell??"> -->
+    <div class="invInp">
+      <div class="pt-1.5"></div>
+      <textarea matInput placeholder="What do you want to talk about?" rows="10" formControlName="content"></textarea>
+  </div>
   </div>
   <div class="flex justify-between mt-7">
     <div>
@@ -41,11 +31,10 @@
       <mat-label class="text-blue-500 inline-block align-bottom">Hash tag</mat-label>
     </div>
       <div class="mb-2 ">
-        <div class="text-white tracking-wide border border-blue-500 rounded-full px-4 py-1 mr-5 font-medium cursor-pointer bg-blue-500 " (click)="onConfirmClick()">Post</div>
+        <button [ngClass]="postForm.invalid ? 'text-gray-400 bg-gray-200 border-gray-500' : 'text-white border-blue-500 bg-blue-500 cursor-pointer' "
+        class=" tracking-wide border  rounded-full px-4 py-1 mr-5 font-medium"
+        (click)="onConfirmClick()" [disabled]="postForm.invalid"> Post</button>
       </div>
     </div>
   </form>
-
-
-
 </div>

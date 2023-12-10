@@ -5,5 +5,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.invInp {
+  p {
+    @apply tracking-wider;
+    @apply text-xs;
+    @apply pl-1;
+    @apply text-[#78909C];
+    @apply font-medium;
+  }
+
+  input {
+    outline: none;
+    @apply w-full;
+    @apply px-3;
+    @apply py-2;
+    @apply rounded-lg;
+    @apply text-[#455A64];
+    @apply border;
+    @apply border-[#B0BEC5];
+  }
+
+  textarea {
+    outline: none;
+    @apply w-full;
+    @apply px-3;
+    @apply py-2;
+    @apply rounded-lg;
+    @apply text-[#455A64];
+    @apply border;
+    @apply border-[#B0BEC5];
+  }
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
