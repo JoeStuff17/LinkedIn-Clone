@@ -1,233 +1,290 @@
-<div class="w-full flex h-full gap-5 ">
+<div class="w-full justify-center flex h-full gap-5 ">
 
- <!-- Left content -->
- <div class="hidden sm:block w-[20%] md:block w-[20%] lg:block w-[20%] lg:w-[20%]" *ngFor="let p of profileData">
-  <div class="flex flex-col space-y-1.5">
-    <div class="rounded-lg bg-white border border-gray-300">
-      <div class=" flex flex-col justify-center">
-        <div class="h-16 rounded-t-lg">
-          <img class="rounded-t-lg h-16 w-[100%]" [src]="p['bgImage']" alt="">
+  <!-- Left content -->
+  <div class="hidden sm:block w-[20%] md:block w-[20%] lg:block w-[17%] lg:w-[17%]">
+    <div class="flex flex-col space-y-1.5">
+      <div class="rounded-lg bg-white border border-gray-300">
+        <div class=" flex flex-col justify-center">
+          <div class="h-16 rounded-t-lg">
+            <img class="rounded-t-lg h-16 w-[100%]" [src]="profileData['bgImage']" alt="">
+          </div>
+          <div class="flex justify-center -mt-[40px] ">
+            <img class=" border border-white rounded-full w-20 h-20 p-0.5 bg-white" [src]="profileData['profile']"
+              alt="">
+          </div>
+          <div>
+            <div class="flex flex-col justify-center items-center">
+              <span class="flex  text-xl">{{profileData['name']}}</span>
+              <h5 class="text-[#717171] justify-center items-center">{{profileData['organization']}}</h5>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="py-4 p-4">
+              <span class="text-[#717171] text-xs  flex flex-col" href="">Connections</span>
+              <span class="pb-2 text-xs">Grow your network</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="py-4 p-4">
+              <span class="text-[#717171] text-xs flex flex-col" href="">Access exclusive tools & insights</span>
+              <div class="flex pt-1">
+                <img class="flex flex-row w-2.5 h-3 pt-0.5"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlt9mIjyaGasgYw30C3jbBcEK6-ftXwXRbNjt2dDhfzG2aDi0E3JYKCCi10X3ZN56Drrs&usqp=CAU">
+                <span class="text-xs pl-1 align-text-top	" href="">Get hired faster. Try Premium free.</span>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="flex pt-3 text-[#717171] p-4">
+              <img class="flex flex-row w-2.5 h-4 pt-0.5" src="https://cdn-icons-png.flaticon.com/512/25/25353.png">
+              <span class="text-xs pl-3" href="">My items</span>
+            </div>
+          </div>
         </div>
-        <div class="flex justify-center -mt-[40px] ">
-          <img class=" border border-white rounded-full w-20 h-20 p-0.5 bg-white" [src]="p['profileImage']" alt="">
+      </div>
+      <div class="rounded-lg bg-white flex flex-col border border-gray-300">
+        <div class="flex justify-between items-center">
+          <span class="text-xs text-[#717171] p-3">Followed Hashtags</span>
+          <button mat-icon-button>
+            <mat-icon class="text-xl">keyboard_arrow_down</mat-icon>
+          </button>
+        </div>
+        <span class="text-xs text-[#0A66C2] px-3 py-2">Groups</span>
+        <div class="flex justify-between items-center">
+          <span class="text-xs text-[#0A66C2] px-3 py-2">Events</span>
+          <mat-icon class="text-xl mr-2.5 mb-1 cursor-pointer">add</mat-icon>
+        </div>
+        <div class="flex justify-between items-center ">
+          <span class="text-xs text-[#0A66C2] px-3 py-2">Followed Hashtags</span>
+          <mat-icon class="text-xl mr-2.5 cursor-pointer">keyboard_arrow_down</mat-icon>
+        </div>
+        <mat-divider></mat-divider>
+        <button class="text-[#717171]" mat-button>Discover More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle content -->
+  <div class=" w-full sm:w-full lg:w-[40%] overflow-y-scroll scroll" style="z-index: 1;">
+    <div class="hidden sm:block">
+      <div class=" rounded-lg bg-white  flex flex-col border border-gray-300 ">
+        <div class="flex ">
+          <img class=" border border-white rounded-full w-14 h-14 my-3 ml-3 bg-white" [src]="profileData['profile']"
+            alt="">
+          <div
+            class=" border border-gray-400 w-full rounded-full text-[#717171] mt-2 ml-2 flex self-center p-3 mr-4 cursor-pointer "
+            (click)="openPost()">
+            <span> Start a post </span>
+          </div>
+
+        </div>
+        <div class="flex justify-between p-1 mx-2">
+          <button mat-button><i class="icofont-image inline-block align-middle text-[#378fe9] text-xl "></i> <span
+              class=" ml-3 inline-block align-middle text-[#717171]">Photo</span></button>
+          <button mat-button><i class="icofont-youtube-play inline-block align-middle text-[#5f9b41] text-xl"></i><span
+              class="ml-3 inline-block align-middle text-[#717171]">Video</span></button>
+          <button mat-button><i class="icofont-ui-calendar inline-block align-middle text-[#c37d16] text-xl"></i><span
+              class="ml-3 inline-block align-middle text-[#717171]">Event</span></button>
+          <button mat-button><i class="icofont-ui-note inline-block align-middle text-[#e16745] text-xl"></i><span
+              class="ml-3 inline-block align-middle text-[#717171]">Write article</span></button>
+        </div>
+      </div>
+      <div class=" my-1  flex">
+        <div class="w-[85%] mt-2.5"><mat-divider></mat-divider></div>
+        <div class="w-[15%] flex justify-end">
+          <span class="text-[12px] text-[#717171] ">Sort by: Top</span>
+        </div>
+      </div>
+    </div>
+    <!-- skeleton loader -->
+    <div *ngIf="isLoading" class="container">
+      <div class="col-sm-6 col-md-3">
+        <div class="movie--isloading">
+          <div class="loading-image"></div>
+          <div class="loading-content">
+            <div class="loading-text-container">
+              <div class="loading-main-text"></div>
+              <div class="loading-sub-text"></div>
+            </div>
+            <div class="loading-btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isLoading">
+      <div class="rounded-lg bg-white flex flex-col border border-gray-300 mb-1" *ngFor="let f of feeds;index as i">
+        <div class="flex p-3 justify-between">
+          <div class="flex">
+            <img class="w-12 h-12" [src]="f['profile']" alt="">
+            <div class="flex flex-col ml-2">
+              <span class="text-md">{{f['user']}}</span>
+              <span class="text-xs text-[#717171] ">{{f['description']}}</span>
+              <span class="text-xs text-[#717171]">{{f['createdAt']}}d <span class="text-center mb-1">.</span> Edited .
+                <i class="icofont-world"></i></span>
+            </div>
+          </div>
+          <div>
+            <button mat-icon-button aria-label="more">
+              <mat-icon>more_horiz</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="px-3">
+          <p>{{f['content']}}</p>
         </div>
         <div>
-          <div class="flex flex-col justify-center items-center">
-            <span class="flex  text-xl">{{p['name']}}</span>
-            <h5 class="text-[#717171] justify-center items-center">{{p['organization']}}</h5>
-          </div>
-          <mat-divider></mat-divider>
-          <div class="py-4 p-4">
-            <span class="text-[#717171] text-xs  flex flex-col" href="">Connections</span>
-            <span class="pb-2 text-xs">Grow your network</span>
-          </div>
-          <mat-divider></mat-divider>
-          <div class="py-4 p-4">
-            <span class="text-[#717171] text-xs flex flex-col" href="">Access exclusive tools & insights</span>
-            <div class="flex pt-1">
-              <img class="flex flex-row w-2.5 h-3 pt-0.5"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlt9mIjyaGasgYw30C3jbBcEK6-ftXwXRbNjt2dDhfzG2aDi0E3JYKCCi10X3ZN56Drrs&usqp=CAU">
-              <span class="text-xs pl-1 align-text-top	" href="">Get hired faster. Try Premium free.</span>
+          <img [src]="f['image']" alt="feed">
+        </div>
+        <div>
+          <div class="h-8 flex justify-between px-4 items-center text-gray-500 text-[12px]">
+            <div class="-space-x-1">
+              <i
+                class="icofont-thumbs-up rounded-full p-0.5 bg-blue-600 border border-white text-[10px] text-gray-100 inline-block transform -scale-x-100"></i>
+              <i
+                class="icofont-heart rounded-full p-0.5 bg-red-600 text-[10px] border border-white text-gray-100 inline-block transform -scale-x-100"></i>
+              {{f['likes'] | number: '1.0-0'}}
+            </div>
+            <div class="cursor-pointer">
+              <span class="hover:underline hover:text-blue-500" (click)="viewComment(i)">{{f['comments'].length}}
+                comments</span> . {{f['reposts']}} reposts
             </div>
           </div>
           <mat-divider></mat-divider>
-          <div class="flex pt-3 text-[#717171] p-4">
-            <img class="flex flex-row w-2.5 h-4 pt-0.5" src="https://cdn-icons-png.flaticon.com/512/25/25353.png">
-            <span class="text-xs pl-3" href="">My items</span>
+          <div class="flex justify-between p-2 px-6">
+            <button mat-button><i
+                class="icofont-thumbs-up text-[#717171] text-2xl inline-block transform -scale-x-100"></i><span
+                class="text-xs text-[#717171] inline-block align-middle">&nbsp;Like</span></button>
+            <button mat-button (click)="viewComment(i)"><i
+                class="icofont-comment text-[#717171] text-2xl inline-block align-middle"></i> <span
+                class="text-xs text-[#717171] inline-block align-middle"> Comment</span> </button>
+            <button mat-button><i class="icofont-retweet text-[#717171] text-2xl inline-block align-middle"></i><span
+                class="text-xs text-[#717171] inline-block align-middle"> Repost</span></button>
+            <button mat-button><i
+                class="icofont-paper-plane text-[#717171] text-2xl inline-block align-middle"></i><span
+                class="text-xs text-[#717171] inline-block align-middle"> Send</span></button>
+          </div>
+        </div>
+        <div *ngIf="f['isComment']" class="pb-3">
+          <div class="flex">
+            <img class="border border-white rounded-full w-11 h-11 my-3 ml-3 bg-white" [src]="profileData['profile']"
+              alt="">
+            <div
+              class="border border-gray-400 w-full rounded-full text-[#717171] mt-2 ml-1 flex justify-between self-center p-2 mr-4 "
+              type="input">
+              <span>Add a comment... </span>
+              <div class="flex gap-5 text-lg font-extrabold">
+                <i class="icofont-slightly-smile"></i>
+                <i class="icofont-image"></i>
+              </div>
+            </div>
+          </div>
+          <span class="pl-4 text-[13px] text-gray-600">Most relevant <i class="icofont-caret-down"></i></span>
+          <div *ngFor="let c of f['comments'];index as i">
+            <div *ngIf="i<commentLimit">
+              <div class="flex px-1 pr-4 gap-1 pb-2">
+                <img class="border border-white rounded-full w-11 h-11 my-3 ml-3 bg-white" [src]="c['profile']" alt="">
+                <div class="bg-gray-100 w-full rounded-b-lg rounded-r-lg p-4">
+                  <div class="flex justify-between">
+                    <div class="flex flex-col">
+                      <div class="text-gray-800 font-medium text-[13px]">{{c['user']}}</div>
+                      <div class="text-[11px] text-gray-500">{{c['role']}}</div>
+                    </div>
+                    <span class="text-gray-400 font-medium text-[11px] flex">{{c['createdAt']}}d
+                      <div class="pb-1">
+                        <mat-icon>more_horiz</mat-icon>
+                      </div>
+                    </span>
+                  </div>
+                  <span>{{c['content']}}</span>
+                </div>
+              </div>
+              <div class="cursor-pointer flex text-[12px] text-gray-600 pl-20 pb-2 gap-3">
+                <span class="pr-2 border-r-2 border-gray-200">Like
+                  <i
+                    class="icofont-thumbs-up rounded-full p-0.5 bg-blue-600 border border-white text-[10px] text-gray-100 inline-block transform -scale-x-100"></i>
+                  {{c['likes'] | number: '1.0-0'}} </span>
+                <span class="border-gray-200">Reply </span>
+              </div>
+            </div>
+          </div>
+          <div class="flex pl-4">
+            <div *ngIf="commentLimit === 4 && f['comments'].length > 4"
+              class="cursor-pointer text-gray-600 font-medium hover:bg-gray-300 px-2 py-0.5 flex rounded-sm"
+              (click)="this.commentLimit = f['comments'].length ">Load more comments</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="rounded-lg bg-white flex flex-col border border-gray-300">
-      <div class="flex justify-between items-center">
-        <span class="text-xs text-[#717171] p-3">Followed Hashtags</span>
-        <button mat-icon-button>
-          <mat-icon class="text-xl">keyboard_arrow_down</mat-icon>
-        </button>
-      </div>
-      <span class="text-xs text-[#0A66C2] px-3 py-2">Groups</span>
-      <div class="flex justify-between items-center">
-        <span class="text-xs text-[#0A66C2] px-3 py-2">Events</span>
-        <mat-icon class="text-xl mr-2.5 mb-1 cursor-pointer">add</mat-icon>
-      </div>
-      <div class="flex justify-between items-center ">
-        <span class="text-xs text-[#0A66C2] px-3 py-2">Followed Hashtags</span>
-        <mat-icon class="text-xl mr-2.5 cursor-pointer">keyboard_arrow_down</mat-icon>
-      </div>
-      <mat-divider></mat-divider>
-      <button class="text-[#717171]" mat-button>Discover More</button>
-    </div>
   </div>
-</div>
 
-<!-- Middle content -->
-<div class=" w-full sm:w-full lg:w-[48%] overflow-y-scroll scroll" style="z-index: 1;">
-  <div class="hidden sm:block">
-  <div class=" rounded-lg bg-white  flex flex-col border border-gray-300 " *ngFor="let p of profileData">
-    <div class="flex ">
-      <img class=" border border-white rounded-full w-14 h-14 my-3 ml-3 bg-white" [src]="p['profileImage']" alt="">
-      <div
-        class=" border border-gray-400 w-full rounded-full text-[#717171] mt-2 ml-2 flex self-center p-3 mr-4 cursor-pointer "
-        (click)="openPost()">
-        <span> Start a post </span>
+  <!-- Right content -->
+  <div class="hidden sm:hidden md:hidden lg:block w-[30%] xl:w-[23%]">
+    <div class="rounded-lg bg-white flex flex-col border border-gray-300 ">
+      <div class="flex justify-between px-2 pt-3">
+        <span class="text-base">LinkedIn News</span>
+        <i class="icofont-info-square "></i>
       </div>
-
-    </div>
-    <div class="flex justify-between p-1 mx-2">
-      <button mat-button><i class="icofont-image inline-block align-middle text-[#378fe9] text-xl "></i> <span
-          class=" ml-3 inline-block align-middle text-[#717171]">Photo</span></button>
-      <button mat-button><i class="icofont-youtube-play inline-block align-middle text-[#5f9b41] text-xl"></i><span
-          class="ml-3 inline-block align-middle text-[#717171]">Video</span></button>
-      <button mat-button><i class="icofont-ui-calendar inline-block align-middle text-[#c37d16] text-xl"></i><span
-          class="ml-3 inline-block align-middle text-[#717171]">Event</span></button>
-      <button mat-button><i class="icofont-ui-note inline-block align-middle text-[#e16745] text-xl"></i><span
-          class="ml-3 inline-block align-middle text-[#717171]">Write article</span></button>
-    </div>
-  </div>
-  <div class=" my-1  flex">
-    <div class="w-[85%] mt-2.5"><mat-divider></mat-divider></div>
-    <div class="w-[15%] flex justify-end">
-      <span class="text-[12px] text-[#717171] ">Sort by: Top</span>
-    </div>
-  </div>
-</div>
-  <div class="rounded-lg bg-white  flex flex-col border border-gray-300 mb-1" *ngFor="let c of companyData">
-    <div class="flex p-3 justify-between">
-      <div class="flex">
-        <img class="w-12 h-12"
-          src="https://img.etimg.com/thumb/width-640,height-480,imgsize-51869,resizemode-1,msid-63636980/small-biz/startups/newsbuzz/amazon-looks-up-sees-a-bright-star-in-the-cloud/aws2.jpg"
-          alt="">
-        <div class="flex flex-col ml-2">
-          <span class="text-md">{{c['name']}}</span>
-          <span class="text-xs text-[#717171] ">{{c['sub']}}</span>
-          <span class="text-xs text-[#717171]">{{c['source']}}</span>
+      <div *ngFor="let n of news;index as i">
+        <div class="pl-4 py-1" *ngIf="i<newsLimit">
+          <li class="text-sm ">{{n['topic']}}</li>
+          <div class="flex ">
+            <small class="pl-5 text-[#717171]">{{n['createdAt']}}d ago </small>
+            <li class="px-2 text-[#717171]"><small class="text-[#717171]">{{n['readers']}} readers</small></li>
+          </div>
         </div>
       </div>
-      <div>
-        <button mat-icon-button aria-label="more">
-          <mat-icon>more_horiz</mat-icon>
-        </button>
+      <div *ngIf="newsLimit === 5" class="flex pl-7 pb-2">
+        <button mat-button><span class="text-[#717171] cursor-pointer" (click)="newsLimit = news.length">Show more <i
+              class="icofont-rounded-down text-base inline-block align-middle"></i> </span></button>
+      </div>
+      <div *ngIf="newsLimit > 5" class="flex pl-7 pb-2">
+        <button mat-button><span class="text-[#717171] cursor-pointer" (click)="newsLimit = 5">Show less <i
+              class="icofont-rounded-up text-base inline-block align-middle"></i> </span></button>
       </div>
     </div>
-    <div class="px-3">
-      <p>1 week to go until Cisco Live 2022 Melbourne starts! We are so excited to be coming back together and to show
-        you what we have planned on-site. Make sure you have registered and scheduled in your sessions now.</p>
-    </div>
-    <div>
-      <img
-        src="https://media-exp1.licdn.com/dms/image/C4E22AQEf-txd9_KQ-A/feedshare-shrink_1280/0/1669672801976?e=1672876800&v=beta&t=Lr926ygzvNKOFhQM8mJ4BBOrT_3MYn9hG5NsMR3lYyk"
-        alt="">
-    </div>
-    <div>
-      <mat-divider></mat-divider>
-      <div class="flex justify-between p-2">
-        <button mat-button><i class="icofont-thumbs-up text-[#717171] text-2xl inline-block"></i><span
-            class="text-xs text-[#717171] inline-block align-middle">Like</span></button>
-        <button mat-button><i class="icofont-comment text-[#717171] text-2xl inline-block align-middle"></i> <span
-            class="text-xs text-[#717171] inline-block align-middle">Comment</span> </button>
-        <button mat-button><i class="icofont-retweet text-[#717171] text-2xl inline-block align-middle"></i><span
-            class="text-xs text-[#717171] inline-block align-middle">Repost</span></button>
-        <button mat-button><i class="icofont-paper-plane text-[#717171] text-2xl inline-block align-middle"></i><span
-            class="text-xs text-[#717171] inline-block align-middle">Send</span></button>
-
+    <div class="rounded-lg bg-white mt-1.5 flex flex-col border border-gray-300 overflow-hidden ">
+      <div class="flex justify-end pt-2 pr-5">
+        <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>
+      </div>
+      <div class="text-xs text-[#717171] text-center pt-2">
+        <span>Get the latest on jobs, news, and more</span>
+      </div>
+      <div class="flex justify-center ">
+        <img class=" rounded-full w-20 h-20 m-4 bg-white" [src]="profileData['profile']" alt="">
+        <img class="w-16 h-16 m-2 mt-6"
+          [src]="profileData['addImage']"
+          alt="">
+      </div>
+      <div class="text-center">
+        <span class="text-[#717171]">{{profileData['name']}}, you might like to follow Bit (bit.dev)</span>
+      </div>
+      <div class="flex justify-center">
+        <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">Follow
+        </div>
       </div>
     </div>
-
-  </div>
-</div>
-
-<!-- Right content -->
-<div class="hidden sm:hidden md:hidden lg:block w-[30%] xl:w-[30%]" *ngFor="let p of profileData">
-  <div class="rounded-lg bg-white flex flex-col border border-gray-300 ">
-    <div class="flex justify-between px-2 pt-3">
-      <span class="text-base">LinkedIn News</span>
-      <i class="icofont-info-square "></i>
-    </div>
-    <div class="pl-4 py-1">
-      <li class="text-sm ">Making Bank Metaverse Ready</li>
-      <div class="flex ">
-        <small class="pl-5 text-[#717171]">1d ago </small>
-        <li class="px-2 text-[#717171]"><small class="text-[#717171]">282 readers</small></li>
-      </div>
-    </div>
-    <div class="pl-4 py-1">
-      <li class="text-sm ">Making Bank Metaverse Ready</li>
-      <div class="flex ">
-        <small class="pl-5 text-[#717171]">1d ago </small>
-        <li class="px-2 text-[#717171]"><small class="text-[#717171]">282 readers</small></li>
-      </div>
-    </div>
-    <div class="pl-4 py-1">
-      <li class="text-sm ">Making Bank Metaverse Ready</li>
-      <div class="flex ">
-        <small class="pl-5 text-[#717171]">1d ago </small>
-        <li class="px-2 text-[#717171]"><small class="text-[#717171]">282 readers</small></li>
-      </div>
-    </div>
-    <div class="pl-4 py-1">
-      <li class="text-sm ">Making Bank Metaverse Ready</li>
-      <div class="flex ">
-        <small class="pl-5 text-[#717171]">1d ago </small>
-        <li class="px-2 text-[#717171]"><small class="text-[#717171]">282 readers</small></li>
-      </div>
-    </div>
-    <div class="pl-4 py-1">
-      <li class="text-sm ">Making Bank Metaverse Ready</li>
-      <div class="flex ">
-        <small class="pl-5 text-[#717171]">1d ago </small>
-        <li class="px-2 text-[#717171]"><small class="text-[#717171]">282 readers</small></li>
-      </div>
-    </div>
-    <div class="flex pl-7 pb-2">
-      <button mat-button><span class="text-[#717171]">Show more <i
-            class="icofont-rounded-down text-base inline-block align-middle"></i> </span></button>
-    </div>
-  </div>
-  <div class="rounded-lg bg-white mt-1.5 flex flex-col border border-gray-300 overflow-hidden ">
-    <div class="flex justify-end pt-2 pr-5">
-      <span>Ad <mat-icon class="inline-block align-middle">more_horiz</mat-icon> </span>
-    </div>
-    <div class="text-xs text-[#717171] text-center pt-2">
-      <span>Get the latest on jobs, news, and more</span>
-    </div>
-    <div class="flex justify-center ">
-      <img class=" rounded-full w-20 h-20 m-4 bg-white" [src]="p['profileImage']" alt="">
-      <img class="w-16 h-16 m-2 mt-6"
-        src="https://media-exp1.licdn.com/dms/image/C4D0BAQG6mLLezAvLKQ/company-logo_100_100/0/1632890379926?e=1677715200&v=beta&t=wxjqgaWujrg41DVr6K4N52tKHPNU-0Pmvwqn0WHBHOg"
-        alt="">
-    </div>
-    <div class="text-center">
-      <span class="text-[#717171]">{{p['name']}}, you might like to follow Bit (bit.dev)</span>
-    </div>
-    <div class="flex justify-center">
-      <div class="text-blue-700 tracking-wide border border-blue-700 rounded-full px-4 py-1.5 my-2 font-medium">Follow
+    <div class="pt-5">
+      <div class="flex flex-col ">
+        <div class="flex justify-center gap-3">
+          <span class="text-[#717171] text-xs">About</span>
+          <span class="text-[#717171] text-xs">Accessibility</span>
+          <span class="text-[#717171] text-xs">Help Center</span>
+        </div>
+        <div class="flex justify-center gap-3 mt-2">
+          <span class="text-[#717171] text-xs">Privacy & Terms </span>
+          <span class="text-[#717171] text-xs">Ad Choices</span>
+        </div>
+        <div class="flex justify-center gap-3 mt-2">
+          <span class="text-[#717171] text-xs">Advertising</span>
+          <span class="text-[#717171] text-xs">Business Services</span>
+        </div>
+        <div class="flex justify-center gap-3 mt-2">
+          <span class="text-[#717171] text-xs">Get the LinkedIn app</span>
+          <span class="text-[#717171] text-xs">More</span>
+        </div>
+        <div class="flex justify-center gap-3 mt-4">
+          <span class="text-xs"> LinkedIn Corporation © 2022</span>
+        </div>
       </div>
     </div>
   </div>
-  <div class="pt-5">
-    <div class="flex flex-col ">
-      <div class="flex justify-center gap-3">
-        <span class="text-[#717171] text-xs">About</span>
-        <span class="text-[#717171] text-xs">Accessibility</span>
-        <span class="text-[#717171] text-xs">Help Center</span>
-      </div>
-      <div class="flex justify-center gap-3 mt-2">
-        <span class="text-[#717171] text-xs">Privacy & Terms </span>
-        <span class="text-[#717171] text-xs">Ad Choices</span>
-      </div>
-      <div class="flex justify-center gap-3 mt-2">
-        <span class="text-[#717171] text-xs">Advertising</span>
-        <span class="text-[#717171] text-xs">Business Services</span>
-      </div>
-      <div class="flex justify-center gap-3 mt-2">
-        <span class="text-[#717171] text-xs">Get the LinkedIn app</span>
-        <span class="text-[#717171] text-xs">More</span>
-      </div>
-      <div class="flex justify-center gap-3 mt-4">
-        <span class="text-xs"> LinkedIn Corporation © 2022</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div>

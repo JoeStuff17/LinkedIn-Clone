@@ -7,7 +7,8 @@ import { Observable, Subject, tap } from "rxjs";
 })
 
 export class ApiService {
-  url = "http://localhost:3000/api"
+  url = "http://localhost:3000/api" //local
+  // url = "http://    /api" //prod
   constructor(private http: HttpClient) { }
 
   private _refresh = new Subject<void>();
@@ -34,13 +35,12 @@ export class ApiService {
       })
     )
   }
-  
+
   getProfileDetails(): Observable<any> {
     return this.http.get(this.url + '/userprofile');
   }
 
   updateProfile(payload: any){
-    console.log(payload);
     return this.http.put(this.url + '/userprofile/4', payload).pipe(
       tap(()=>{
         this.Refresh.next();
