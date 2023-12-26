@@ -1,9 +1,10 @@
-<div class="w-full fixed">
-  <div class="flex justify-evenly flex-row bg-white pt-1">
-    <div class="" *ngFor="let m of myMenu">
-      <div class="flex flex-col text-[#717171]" role="button" routerLink="{{m['link']}}">
+<div class="w-full fixed bottom-0">
+  <div class="flex justify-evenly flex-row bg-white" >
+    <div class="text-[#717171] py-2 hover:text-black" [ngClass]="m.isSelect ? 'text-black font-medium border-t-2 border-black' : 'text-gray-500'"
+     *ngFor="let m of myMenu" (click)="menuRouter(m)">
+      <div class="flex flex-col" role="button" routerLink="{{m['link']}}">
         <i class="{{m['icon']}} self-center text-xl"></i>
-        <small class="flex text-[10px] capitalize inline sm:hidden">{{m['name']}}</small>
+        <small class=" text-[10px] capitalize inline sm:hidden">{{m['name']}}</small>
       </div>
     </div>
   </div>

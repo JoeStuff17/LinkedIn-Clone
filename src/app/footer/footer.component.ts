@@ -38,6 +38,14 @@ export class FooterComponent {
   //   });
   // }
 
+  menuRouter(menu: any) {
+    for (const m of this.myMenu) {
+      m.isSelect = false;
+    }
+    const obj = this.myMenu.filter((e: any) => e.name === menu.name);
+    obj[0].isSelect = true;
+  }
+
   openPost(): void {
     this.dialog.open(UserDialogComponent, {
       disableClose: false,
