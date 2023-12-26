@@ -22,6 +22,7 @@
     "@angular/router": "^15.0.0",
     "@icon/icofont": "^1.0.1-alpha.1",
     "@types/mapbox-gl-leaflet": "^0.0.1",
+    "firebase": "^10.7.1",
     "leaflet": "^1.9.3",
     "leaflet-control-geocoder": "^2.4.0",
     "leaflet-routing-machine": "^3.2.12",
