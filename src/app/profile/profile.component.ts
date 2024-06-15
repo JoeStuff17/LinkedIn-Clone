@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
     data: [{
       title: 'Software Engineer',
       company: 'ReadyAssist - 24/7 Roadside Assistance · Full-time',
-      logo: 'https://media.licdn.com/dms/image/D4D0BAQEoc9Pv2xzJ1A/company-logo_100_100/0/1698294724540?e=1710374400&v=beta&t=UORLM1vQfbmRjI8sYSCQrn9JHXKh4PHaWrImdCO8AcY',
+      logo: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ra_logo.jpeg',
       started: 'Nov 2022',
       ended: 'Present',
       duration: '1 yr 2 mos',
@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
   {
     title: 'Education', data: [{
       title: 'Tamil Nadu Open University, Chennai',
-      logo: 'https://media.licdn.com/dms/image/D4D0BAQH1vO2pDz4e8w/company-logo_100_100/0/1698777779172?e=1710374400&v=beta&t=6G-J7f_ENkpjH7Cq6m5LdP_iaYtr9XFT-EnK8pRy7Kk',
+      logo: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/tnou_logo.jpeg',
       company: 'Master of Computer Applications - MCA, Computer Science',
       started: 'Jun 2019', ended: 'Jun 2021', duration: '2 yr',
       skills: [{ name: 'DBMS' }, { name: 'SQL' }]
