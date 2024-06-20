@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule, MatSidenavContent, MatSidenav } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MatSidenavModule, MatSidenavContent, MatSidenav } from '@angular/materi
     MatDividerModule,
     MatGridListModule,
     MatCardModule,
+    MatMenuModule
   ],
   exports: [
     MatSidenav,

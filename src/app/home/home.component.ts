@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   { topic: 'Chennai floods hit businesses', readers: 456, createdAt: 9 }];
   feeds = [
     {
-      user: 'ReadyAssist', description: '24/7 Vehicle Care Company', createdAt: 3, followers: 78000, isComment : false,
+      user: 'ReadyAssist', description: '24/7 Vehicle Care Company', createdAt: 3, followers: 78000, isComment: false,
       profile: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ra_logo.jpeg',
       content: 'Exciting News! 🚀 ReadyAssist is thrilled to announce our support as a Silver Partner at the 8th edition of the hashtag#ETAutoEVConclave on November 29-30 at Hyatt Regency, New Delhi.',
       image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ra_post.jpeg', likes: 9565, reposts: 450, comments:
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
         { user: 'Praveen', role: 'Flutter Developer', createdAt: 7, profile: 'https://www.sony.eu/alphauniverse/assets/resized/2020/10/Julien-Mauve-profile_square_291x291.jpg', content: 'Keep rocking.', image: '', likes: 16 }]
     },
     {
-      user: 'Microsoft', description: 'Software Development', createdAt: 4, followers: 2100000, isComment : false,
+      user: 'Microsoft', description: 'Software Development', createdAt: 4, followers: 2100000, isComment: false,
       profile: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ms.png',
       content: "Find your creative spark with November's edition of The Monthly Tech-In. ✨ This month, we explore how Microsoft Copilot is revolutionizing work for everyone from the 9-to-5ers to frontline workers. We also dive into AI lingo used in todays workplace and share a pop quiz for you to put your AI knowledge to the test. ",
       image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ms_post.png', likes: 1289, reposts: 900, comments:
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
         { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15 }]
     },
     {
-      user: 'GeeksforGeeks', description: 'Education', createdAt: 7, followers: 1630576, isComment : false,
+      user: 'GeeksforGeeks', description: 'Education', createdAt: 7, followers: 1630576, isComment: false,
       profile: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/geeksforgeeks.jpeg',
       content: "feeling moye moye",
       image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/gg_post.jpeg', likes: 879, reposts: 90, comments:
@@ -60,8 +60,13 @@ export class HomeComponent implements OnInit {
         { user: 'Arun', role: 'Web Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3IdlkJ17gfJzYce6qsBmaE2Vt22V9HwMTw&usqp=CAU', content: 'Great Work', image: '', likes: 5 },
         { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15 },
         { user: 'Nagoo', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBee4FB4BYDUBQCZjMzZLpAtOqr5mzN2J5Kw&usqp=CAU', content: 'Keep rocking.', image: '', likes: 16 }]
-    },]
-  constructor(public dialog: MatDialog,
+    },];
+  sortItems = [{ name: 'top', isSelect: true }, { name: 'recent', isSelect: false }];
+  postInfoItems = [{ name: 'Save', logo: 'icofont-book-mark' }, { name: 'Copy link yo post', logo: 'icofont-link' }, { name: 'Embed this post', logo: 'icofont-tag' }, { name: "I don't want to see this", logo: 'icofont-eye-blocked' }, { name: 'Report post', logo: 'icofont-flag' }];
+  likeItems = ['text-blue-500 icofont-like', 'text-green-500 fa-solid fa-hands-clapping', 'text-red-500 icofont-heart', 'text-yellow-500 icofont-light-bulb', 'text-sky-500 icofont-simple-smile']
+
+  constructor(
+    public dialog: MatDialog,
     public api: ApiService,
     private dataService: DataService
   ) { }
@@ -101,7 +106,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  viewComment(i: any){
+  viewComment(i: any) {
     for (const feed of this.feeds) {
       feed.isComment = false;
     }
@@ -131,7 +136,7 @@ export class UserDialogComponent implements OnInit {
     this.postForm = this.fb.group({
       content: ['', Validators.required]
     });
-   }
+  }
 
   onConfirmClick() {
     this.dialogRef.close();

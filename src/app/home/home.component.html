@@ -15,7 +15,8 @@
           <div>
             <div class="flex flex-col justify-center items-center">
               <span class="flex  text-xl">{{profileData['name']}}</span>
-              <h5 class="text-[#717171] justify-center items-center">{{profileData['organization']}}</h5>
+              <h5 class="text-[#717171] justify-center items-center">{{profileData['role']}}
+                @{{profileData['organization']}}</h5>
             </div>
             <mat-divider></mat-divider>
             <div class="py-4 p-4">
@@ -65,7 +66,7 @@
   <div class=" w-full sm:w-full lg:w-[40%] overflow-y-scroll scroll" style="z-index: 1;">
     <div class="hidden sm:block">
       <div class=" rounded-lg bg-white  flex flex-col border border-gray-300 ">
-        <div class="flex ">
+        <div class="flex">
           <img class=" border border-white rounded-full w-14 h-14 my-3 ml-3 bg-white" [src]="profileData['profile']"
             alt="">
           <div
@@ -87,9 +88,17 @@
         </div>
       </div>
       <div class=" my-1  flex">
-        <div class="w-[85%] mt-2.5"><mat-divider></mat-divider></div>
-        <div class="w-[15%] flex justify-end">
-          <span class="text-[12px] text-[#717171] ">Sort by: Top</span>
+        <div class="w-[83%] mt-2.5"><mat-divider></mat-divider></div>
+        <div class="w-[17%] flex justify-end cursor-pointer" role="button" [matMenuTriggerFor]="sortBy">
+          <span class="text-[12px] text-[#717171] tracking-wider">Sort by:&nbsp;
+            <span class="font-medium text-black"> Top</span> <i
+              class="font-medium text-[14px] text-black icofont-caret-down"></i></span>
+          <mat-menu #sortBy="matMenu" class="bg-white" xPosition="before">
+            <div *ngFor="let s of sortItems" class="gap-y-2">
+              <span class="p-2 capitalize  text-[13px] text-black tracking-wide cursor-pointer"
+                [ngClass]="s.isSelect? 'border-l-2 border-green-600':''">{{s['name']}}</span>
+            </div>
+          </mat-menu>
         </div>
       </div>
     </div>
@@ -122,9 +131,13 @@
             </div>
           </div>
           <div>
-            <button mat-icon-button aria-label="more">
-              <mat-icon>more_horiz</mat-icon>
-            </button>
+            <mat-icon class="cursor-pointer" role="button" [matMenuTriggerFor]="postInfo">more_horiz</mat-icon>
+            <mat-menu #postInfo="matMenu" class="bg-white" xPosition="before">
+              <div *ngFor="let p of postInfoItems" class="w-full hover:bg-gray-200 p-2 px-5 pr-10">
+                <span class="w-full text-[16px] text-black tracking-wide cursor-pointer ">
+                  <i class="text-[18px] {{p['logo']}}"></i>&nbsp;&nbsp;{{p['name']}}</span>
+              </div>
+            </mat-menu>
           </div>
         </div>
         <div class="px-3">
@@ -149,9 +162,18 @@
           </div>
           <mat-divider></mat-divider>
           <div class="flex justify-between p-2 px-6">
-            <button mat-button><i
-                class="icofont-thumbs-up text-[#717171] text-2xl inline-block transform -scale-x-100"></i><span
-                class="text-xs text-[#717171] inline-block align-middle">&nbsp;Like</span></button>
+
+            <button mat-button [matMenuTriggerFor]="likeInfo">
+              <i class="icofont-thumbs-up text-[#717171] text-2xl inline-block transform -scale-x-100"></i>
+              <span class="text-xs text-[#717171] inline-block align-middle">&nbsp;Like</span>
+
+              <mat-menu #likeInfo="matMenu" class="bg-white rounded-xl" xPosition="after" yPosition="above">
+                <div class="flex gap-3 px-4">
+                  <div *ngFor="let l of likeItems"> <i class="text-[25px] {{l}}"></i> </div>
+                </div>
+              </mat-menu>
+            </button>
+
             <button mat-button (click)="viewComment(i)"><i
                 class="icofont-comment text-[#717171] text-2xl inline-block align-middle"></i> <span
                 class="text-xs text-[#717171] inline-block align-middle"> Comment</span> </button>
@@ -249,9 +271,7 @@
       </div>
       <div class="flex justify-center ">
         <img class=" rounded-full w-20 h-20 m-4 bg-white" [src]="profileData['profile']" alt="">
-        <img class="w-16 h-16 m-2 mt-6"
-          [src]="profileData['addImage']"
-          alt="">
+        <img class="w-16 h-16 m-2 mt-6" [src]="profileData['addImage']" alt="">
       </div>
       <div class="text-center">
         <span class="text-[#717171]">{{profileData['name']}}, you might like to follow Bit (bit.dev)</span>
