@@ -33,33 +33,33 @@ export class HomeComponent implements OnInit {
       user: 'ReadyAssist', description: '24/7 Vehicle Care Company', createdAt: 3, followers: 78000, isComment: false,
       profile: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ra_logo.jpeg',
       content: 'Exciting News! 🚀 ReadyAssist is thrilled to announce our support as a Silver Partner at the 8th edition of the hashtag#ETAutoEVConclave on November 29-30 at Hyatt Regency, New Delhi.',
-      image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ra_post.jpeg', likes: 9565, reposts: 450, comments:
-        [{ user: 'Murali', role: 'Angular Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbpJka9DNXQ-HUbU5I0YUjbsWRvKuhoA3pxFtTBDSngb02FAzdoGLUoUiD91orJPPtT1Q&usqp=CAU', content: 'Awesome', image: '', likes: 12 },
-        { user: 'Arun', role: 'Web Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3IdlkJ17gfJzYce6qsBmaE2Vt22V9HwMTw&usqp=CAU', content: 'Great Work', image: '', likes: 5 },
-        { user: 'Akshatha', role: 'Human Resource', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15 },
-        { user: 'Nagoo', role: 'Full Stack developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBee4FB4BYDUBQCZjMzZLpAtOqr5mzN2J5Kw&usqp=CAU', content: 'Keep rocking.', image: '', likes: 16 },
-        { user: 'Haritha', role: 'Back-End Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTXTE3FBqvPGLwVwasuF4iHYpSa01U9YkfA&usqp=CAU', content: 'Great Work', image: '', likes: 5 },
-        { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2vxPkuzbr1hLMDYq8GQg2cJ7EuFax8-Zwg&usqp=CAU', content: 'Congratulations', image: '', likes: 15 },
-        { user: 'Praveen', role: 'Flutter Developer', createdAt: 7, profile: 'https://www.sony.eu/alphauniverse/assets/resized/2020/10/Julien-Mauve-profile_square_291x291.jpg', content: 'Keep rocking.', image: '', likes: 16 }]
+      image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ra_post.jpeg', likes: 9565, isLiked: false, reposts: 450, comments:
+        [{ user: 'Murali', role: 'Angular Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbpJka9DNXQ-HUbU5I0YUjbsWRvKuhoA3pxFtTBDSngb02FAzdoGLUoUiD91orJPPtT1Q&usqp=CAU', content: 'Awesome', image: '', likes: 12, isLiked: false },
+        { user: 'Arun', role: 'Web Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3IdlkJ17gfJzYce6qsBmaE2Vt22V9HwMTw&usqp=CAU', content: 'Great Work', image: '', likes: 5, isLiked: false },
+        { user: 'Akshatha', role: 'Human Resource', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15, isLiked: false },
+        { user: 'Nagoo', role: 'Full Stack developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBee4FB4BYDUBQCZjMzZLpAtOqr5mzN2J5Kw&usqp=CAU', content: 'Keep rocking.', image: '', likes: 16, isLiked: false },
+        { user: 'Haritha', role: 'Back-End Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTXTE3FBqvPGLwVwasuF4iHYpSa01U9YkfA&usqp=CAU', content: 'Great Work', image: '', likes: 5, isLiked: false },
+        { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2vxPkuzbr1hLMDYq8GQg2cJ7EuFax8-Zwg&usqp=CAU', content: 'Congratulations', image: '', likes: 15, isLiked: false },
+        { user: 'Praveen', role: 'Flutter Developer', createdAt: 7, profile: 'https://www.sony.eu/alphauniverse/assets/resized/2020/10/Julien-Mauve-profile_square_291x291.jpg', content: 'Keep rocking.', image: '', likes: 16, isLiked: false }]
     },
     {
       user: 'Microsoft', description: 'Software Development', createdAt: 4, followers: 2100000, isComment: false,
       profile: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ms.png',
       content: "Find your creative spark with November's edition of The Monthly Tech-In. ✨ This month, we explore how Microsoft Copilot is revolutionizing work for everyone from the 9-to-5ers to frontline workers. We also dive into AI lingo used in todays workplace and share a pop quiz for you to put your AI knowledge to the test. ",
-      image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ms_post.png', likes: 1289, reposts: 900, comments:
-        [{ user: 'Murali', role: 'Angular Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbpJka9DNXQ-HUbU5I0YUjbsWRvKuhoA3pxFtTBDSngb02FAzdoGLUoUiD91orJPPtT1Q&usqp=CAU', content: 'Awesome', image: '', likes: 12 },
-        { user: 'Arun', role: 'Web Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3IdlkJ17gfJzYce6qsBmaE2Vt22V9HwMTw&usqp=CAU', content: 'Great Work', image: '', likes: 5 },
-        { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15 }]
+      image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/ms_post.png', likes: 1289, isLiked: false, reposts: 900, comments:
+        [{ user: 'Murali', role: 'Angular Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbpJka9DNXQ-HUbU5I0YUjbsWRvKuhoA3pxFtTBDSngb02FAzdoGLUoUiD91orJPPtT1Q&usqp=CAU', content: 'Awesome', image: '', likes: 12, isLiked: false },
+        { user: 'Arun', role: 'Web Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3IdlkJ17gfJzYce6qsBmaE2Vt22V9HwMTw&usqp=CAU', content: 'Great Work', image: '', likes: 5, isLiked: false },
+        { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15, isLiked: false }]
     },
     {
       user: 'GeeksforGeeks', description: 'Education', createdAt: 7, followers: 1630576, isComment: false,
       profile: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/geeksforgeeks.jpeg',
       content: "feeling moye moye",
-      image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/gg_post.jpeg', likes: 879, reposts: 90, comments:
-        [{ user: 'Murali', role: 'Angular Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbpJka9DNXQ-HUbU5I0YUjbsWRvKuhoA3pxFtTBDSngb02FAzdoGLUoUiD91orJPPtT1Q&usqp=CAU', content: 'Awesome', image: '', likes: 12 },
-        { user: 'Arun', role: 'Web Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3IdlkJ17gfJzYce6qsBmaE2Vt22V9HwMTw&usqp=CAU', content: 'Great Work', image: '', likes: 5 },
-        { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15 },
-        { user: 'Nagoo', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBee4FB4BYDUBQCZjMzZLpAtOqr5mzN2J5Kw&usqp=CAU', content: 'Keep rocking.', image: '', likes: 16 }]
+      image: 'https://joestuff-bucket.s3.ap-south-1.amazonaws.com/profile/gg_post.jpeg', likes: 879, isLiked: false, reposts: 90, comments:
+        [{ user: 'Murali', role: 'Angular Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbpJka9DNXQ-HUbU5I0YUjbsWRvKuhoA3pxFtTBDSngb02FAzdoGLUoUiD91orJPPtT1Q&usqp=CAU', content: 'Awesome', image: '', likes: 12, isLiked: false },
+        { user: 'Arun', role: 'Web Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3IdlkJ17gfJzYce6qsBmaE2Vt22V9HwMTw&usqp=CAU', content: 'Great Work', image: '', likes: 5, isLiked: false },
+        { user: 'Ankit', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVaYCtrXlbqrWBuXvFqzTAGM6MP3wk2aCcw&usqp=CAU', content: 'Congratulations', image: '', likes: 15, isLiked: false },
+        { user: 'Nagoo', role: 'Full stack Developer', createdAt: 7, profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBee4FB4BYDUBQCZjMzZLpAtOqr5mzN2J5Kw&usqp=CAU', content: 'Keep rocking.', image: '', likes: 16, isLiked: false }]
     },];
   sortItems = [{ name: 'top', isSelect: true }, { name: 'recent', isSelect: false }];
   postInfoItems = [{ name: 'Save', logo: 'icofont-book-mark' }, { name: 'Copy link yo post', logo: 'icofont-link' }, { name: 'Embed this post', logo: 'icofont-tag' }, { name: "I don't want to see this", logo: 'icofont-eye-blocked' }, { name: 'Report post', logo: 'icofont-flag' }];
@@ -111,6 +111,14 @@ export class HomeComponent implements OnInit {
       feed.isComment = false;
     }
     this.feeds[i].isComment = true;
+  }
+
+  feedLike(i: number) {
+    this.feeds[i]['isLiked'] = this.feeds[i]['isLiked'] ? false : true;
+  }
+
+  commentLike(fi: number, ci: number) {
+    this.feeds[fi]['comments'][ci]['isLiked'] = this.feeds[fi]['comments'][ci]['isLiked'] ? false : true;
   }
 }
 
